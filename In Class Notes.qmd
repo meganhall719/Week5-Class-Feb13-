@@ -1,0 +1,57 @@
+---
+title: "Statistics"
+format: html
+editor: visual
+---
+
+## Statistics:
+
+some key summarizing (Descriptive) aspects of statistics... a measure of location (central tendency) for a distribution, a measure of spread or scatter around that location, and a measure of the shape of the distribution
+
+Location
+
+-   mean (average
+
+-   median
+
+-   mode
+
+-   harmonic mean
+
+Spread
+
+-   mean deviation (average of abs calues of devaitions from median)
+
+-   mean squared deviation(average of squared deviations from mean) = variance
+
+-   standard deviation (square root of variance)
+
+Shape
+
+-   skewness: characterizes the asymmetry of the distribution
+
+-   kurtosis: characterizes the peakedness/flatness of a distribution(compared to normal)
+
+Spread
+
+-   population variance = a paremetr
+
+Creating a function
+```{r}
+x<- c(10, 100, 1000, 10000)
+my_pop_variance <- function(x){
+  v <- sum((x - mean(x))^2)/length(x)
+  return(v)
+  }
+
+
+my_sample_var <- function(x){
+  v <- sum((x -  mean(x))^2/(length(x)) - 1)
+return(v)
+  }
+(a <- my_pop_variance(x))  
+(b <- my_sample_var(x))
+(c <- var(x))
+
+```
+
